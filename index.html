@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>
+    Assignment 3 Game - Zoe Chow
+</title>
+<link rel = "stylesheet" href="styless.css">
+<script src="https://cdn.jsdelivr.net/npm/p5@1.7.0/lib/p5.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.js"></script>
+
+</head>
+<body>
+    <div id="bg">
+    <h1>Claws and Cuisine</h1>
+    <p>Help Mochi avoid piles of dirt while collecting delicious pieces of marbled meat! Join this culinary feline
+        on a light hearted and fun adventure!</p>
+    <p>'A' & 'D' to move. 'Space' to jump.</p>
+
+    <div id="gameContainer">
+    <iframe id="mainGame" scrolling="no" src="sketch1.html"></iframe>
+    <iframe id="sideGame" scrolling="no" src="sketch2.html"></iframe>
+    </div>
+
+    <div id="headerContainer">
+        <p id="shopHeader">Upgrades Shop</p>
+    <p id="numHeader">Meat to use:</p>
+    </div>
+
+    <div id="MeatNum">
+        <img id="ug1" src="./images/purpleBook.png">
+        <p id="price">$250</p>
+        <img id="ug2" src="./images/blueBook.png">
+        <p id="price">$500</p>
+        <img id="ug3" src="./images/redBook.png">
+        <p id="price">$750</p>
+        <img id="ug4" src="./images/greenBook.png">
+        <p id="price">$1000</p>
+
+        <input type="number" id="meatInput" placeholder="#" min="1">
+    </div>
+
+    <div id="desc">
+        <p id="price">Extra Life</p>
+        <p id="price">Extra Life</p>
+        <p id="price">Extra Life</p>
+        <p id="price">Double Jump</p>
+    </div>
+
+        <h1 id="dd"><br>Design Statement</h1>
+    <p id="statement">
+        I decided to make a simple procedurally generated side scroller, with the theme being a spin off of another game I had developed in Unity. I chose this because oftentimes the best way to learn a new engine and language is to try and recreate a past project using
+        that new engine. <br><br>The core gameplay loop of this game involves first collecting meat in the platformer, then cooking and selling it for money, before purchasing upgrades
+        that help the player get stronger in the platformer so they can collect more meat. I felt that this positive feedback loop offered a fun and intuitive
+        flow to the game. <br><br>I wanted to capture a lighthearted and cozy feel, hence why I ensured the sprites were brightly colored and the background music was cheerful. The biggest challenge
+        for me was to think of an interactive way to utilize different HTML elements on the page, as well as playtesting the features that involved
+        local storage. Overall, I think this game turned out quite well. While it is not as complex as I would have liked it to be, I think it performs well as a web game.
+
+    <p id="statement">Song: "Here Comes the Sun" Instrumental Version - The Beatles</p>
+    <p id="statement">Road Purr-ade: <a href="https://emexo.itch.io/road-purr-ade">Itch.io</a></p>
+    </div>
+
+
+    <script>
+        const meatNum = document.getElementById("meatInput");
+        meatNum.addEventListener('click', function() {
+            let meatInput = document.getElementById('meatInput').value;
+            let meatAmount = parseInt(meatInput);
+    
+            localStorage.setItem('meatAmount', meatAmount);
+        });
+    
+        const UG4 = document.getElementById("ug4");
+        UG4.addEventListener('click', function() {
+            // Retrieve and convert the money value from localStorage
+            let totalMoney = parseInt(localStorage.getItem("money")) || 0; // Default to 0 if not found
+            
+            if (localStorage.getItem("double jump") === null && totalMoney >= 1000) {
+                localStorage.setItem("double jump", true);
+                
+                totalMoney -= 1000;
+    
+                localStorage.setItem("money", totalMoney);
+            }
+        });
+
+        const UG1 = document.getElementById("ug1");
+        UG1.addEventListener('click', function() {
+            let totalMoney = parseInt(localStorage.getItem("money")) || 0; 
+            
+            if (localStorage.getItem("ug1") === null && totalMoney >= 250) {
+                localStorage.setItem("ug1", true);
+                
+                totalMoney -= 250;
+    
+                localStorage.setItem("money", totalMoney);
+            }
+        });
+
+        const UG2 = document.getElementById("ug2");
+        UG2.addEventListener('click', function() {
+            let totalMoney = parseInt(localStorage.getItem("money")) || 0; 
+            
+            if (localStorage.getItem("ug2") === null && totalMoney >= 500) {
+                localStorage.setItem("ug2", true);
+                
+                totalMoney -= 500;
+    
+                localStorage.setItem("money", totalMoney);
+            }
+        });
+
+        const UG3 = document.getElementById("ug3");
+        UG3.addEventListener('click', function() {
+            let totalMoney = parseInt(localStorage.getItem("money")) || 0; 
+            
+            if (localStorage.getItem("ug3") === null && totalMoney >= 750) {
+                localStorage.setItem("ug3", true);
+                
+                totalMoney -= 750;
+    
+                localStorage.setItem("money", totalMoney);
+            }
+        });
+
+    </script>
+    
+</body>

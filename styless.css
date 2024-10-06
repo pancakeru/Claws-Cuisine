@@ -1,0 +1,126 @@
+
+@font-face {
+    font-family: extraDays;
+    src: url("./extra_days/Extra\ Days.ttf");
+}
+
+
+#mainGame {
+    border: none;
+    margin: none;
+    width: 900px;
+    height: 600px;
+    padding: 0%;
+    display: block;
+}
+
+#sideGame {
+    border: none;
+    margin: none;
+    width: 300px;  
+    height: 600px;
+    padding: 0%;
+    display: block;
+}
+
+h1 {
+    font-family: extraDays;
+    font-size: 5em;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+p {
+    text-align: center;
+    font-family: extraDays;
+    font-size: 2.2em;
+}
+
+body {
+    margin: 3% 3% 3% 3%;
+    background-image: url("./images/pawprintbg.png");
+}
+
+#gameContainer {
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    display: flex;
+    padding: 0;
+}
+
+#bg {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2% 2% 2% 2%;
+    border-radius: 80px;
+}
+
+#MeatNum {
+    display: flex;
+    margin-top: 2%;
+    margin-top: 0%;
+    justify-content: center;
+}
+
+#MeatNum img {
+    width: 10%;
+    transition: transform 0.3s ease;
+}
+
+#MeatNum img:hover {
+    transform: scale(1.2);
+}
+
+#price {
+    font-size: 30px;
+}
+
+#MeatNum input {
+    margin-left: 10%;
+}
+
+#meatInput {
+    height: 40px;
+    width: 60px;
+    font-size: 18px;
+}
+
+#numHeader {
+    font-size: 30px;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 1%;
+    padding: 0%;
+}
+
+#shopHeader {
+    font-size: 30px;
+    padding: 0%;
+    margin-right: 10%;
+    margin-left: 20%;
+}
+
+#headerContainer {
+    display: flex;
+    justify-content: center;
+}
+
+#desc {
+    display: flex;
+    justify-content: left;
+    margin-left: 10%;
+}
+
+#desc #price {
+    margin: 2%
+;}
+
+#dd {
+    margin-bottom: 2%;
+}
+
+#statement {
+    text-align: left;
+    font-family: extraDays;
+    font-size: 30px;
+}
